@@ -1,0 +1,61 @@
+{
+  "name": "pikkr",
+  "version": "1.0.0",
+  "description": "Don't what to choose? pikkr returns a random element from an array, so you don't have to.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Melanie Seltzer <melleh11@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melanieseltzer/pikkr.git"
+  },
+  "homepage": "https://github.com/melanieseltzer/pikkr#readme",
+  "scripts": {
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --config jest.config.js --watchAll",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "jest-mock-random": "^1.0.2",
+    "lint-staged": "^8.1.3",
+    "prettier": "^1.16.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "/lib"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "choose one",
+    "rng",
+    "pick one",
+    "random",
+    "javascript"
+  ]
+}
