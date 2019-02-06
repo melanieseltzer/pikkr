@@ -1,4 +1,4 @@
-# pikkr
+# pikkr ![](https://img.shields.io/circleci/project/github/melanieseltzer/pikkr.svg?style=flat)
 
 > Don't what to choose? pikkr returns a random element from an array, so you don't have to.
 
