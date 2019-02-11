@@ -16,7 +16,12 @@ describe('pikkr function', () => {
     expect(pikkr(['pizza', 'pasta'])).toBe('pasta');
   });
 
-  it('will return false if not enough args', () => {
-    expect(pikkr(['pizza'])).toBe(false);
+  it('will throw a type error if not an array', () => {
+    // @ts-ignore
+    expect(() => pikkr('hi')).toThrowError(TypeError);
+  });
+
+  it('will throw an error if not enough items in array', () => {
+    expect(() => pikkr(['pizza'])).toThrowError(Error);
   });
 });

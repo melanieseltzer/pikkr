@@ -1,7 +1,10 @@
-export default function pikkr<T>(arr: T[]): T | boolean {
-  // Bail early if no arr found or if there's only one item in arr
-  if (!arr || arr.length < 2) {
-    return false;
+export default function pikkr<T>(arr: T[]): T {
+  if (!Array.isArray(arr)) {
+    throw new TypeError('Expected an array.');
+  }
+
+  if (arr.length < 2) {
+    throw new Error('There must be at least 2 items in the array.');
   }
 
   const num = Math.floor(Math.random() * arr.length);
