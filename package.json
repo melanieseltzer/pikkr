@@ -1,6 +1,6 @@
 {
   "name": "pikkr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Don't what to choose? pikkr returns a random element from an array, so you don't have to.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
